@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sleep Outside | Checkout</title>
+    <script src="../js/checkout.js" type="module"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="divider" id="main-header"></header>
+
+    <main class="divider">
+      <section class="products">
+        <h2>Review & Place your Order</h2>
+      </section>
+      <form id="checkout" >
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label for="fname">First Name:</label>
+          <input id="fname" type="text" name="fname" required>
+          <label for="lname">Last Name:</label>
+          <input id="lname" type="text" name="lname" required>
+          <label for="street">Street:</label>
+          <input name="street" required />
+          <label for="city">City:</label>
+          <input id="city" type="text" name="city" required>
+          <label for="state">State:</label>
+          <input id="state" type="text" name="state" required>
+          <label for="zip">Zip Code:</label>
+          <input id="zip" type="text" name="zip" required>
+        </fieldset>
+        <fieldset>
+          <legend>Payment</legend>
+          <label for="cardNumber">Card number:</label>
+          <input name="cardNumber" required />
+          <label for="expiration">Expiration:</label>
+          <input name="expiration" placeholder="8/27" required />
+          <label for="code">Security Code:</label>
+          <input name="code" required />
+        </fieldset>
+        <div class="summary"></div>
+      <button id="checkoutSubmit" type="submit">Checkout</button>
+      </form>
+    </main>
+
+    <footer id="footer"></footer>
+  </body>
+</html>
