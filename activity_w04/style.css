@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.box {
+    width: 200px;
+    color: chartreuse;
+    animation: myanima 3s infinite alternate;
+}
+
+@keyframes myanima {
+    0% {
+        transform: translateY(0);
+        color: chartreuse;
+    }
+    50% {
+        transform: translateY(200px) translateX(-100px);
+        color: chocolate;
+    }
+
+    100% {
+        transform: translateX(-100px) translateY(-100px);
+        color: crimson;
+    }
+}
