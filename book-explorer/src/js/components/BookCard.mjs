@@ -1,13 +1,20 @@
 export default function BookCard(data) {
-     const info = data.volumeInfo;
-    const rating = info.averageRating || "Not rated";
-    const ratingCount = info.ratingsCount || 0;
-    const html = `<section class="card">
-        <img src="${info.imageLinks.thumbnail}">
-        <h2>${info.title}</h2>
-        <p>${info.subtitle || ""}</p>
-        <p>⭐ Rating: ${rating} (${ratingCount} reviews)</p>
-        </section>
-            `;
-    return html;
+  const info = data.volumeInfo;
+  const bookId = data.id;
+  const thumb = info.imageLinks?.thumbnail || 'https://via.placeholder.com/128x192';
+  const title = info.title || 'Untitled';
+
+  return `
+    <section class="card">
+      <img src="${thumb}" alt="Cover: ${title}">
+      <h2>${title}</h2>
+      <p>${info.subtitle || ""}</p>
+      <button 
+        class="open-modal-btn" 
+        data-id="${bookId}" 
+        data-title="${encodeURIComponent(title)}">
+        Details
+      </button>
+    </section>
+  `;
 }
