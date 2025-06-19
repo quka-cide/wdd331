@@ -1,4 +1,4 @@
-export default function BookCard(data) {
+export default function BookCard(data, inMyList = false) {
   const info = data.volumeInfo;
   const bookId = data.id;
   const thumb = info.imageLinks?.thumbnail || 'https://via.placeholder.com/128x192';
@@ -14,6 +14,11 @@ export default function BookCard(data) {
         data-id="${bookId}" 
         data-title="${encodeURIComponent(title)}">
         Details
+      </button>
+      <button 
+        class="${inMyList ? 'remove-from-list-btn' : 'add-to-list-btn'}" 
+        data-book='${JSON.stringify(data)}'>
+        ${inMyList ? 'Remove from My List' : 'Add to My List'}
       </button>
     </section>
   `;

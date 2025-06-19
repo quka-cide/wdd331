@@ -19,14 +19,16 @@
     </header>
     <main>
         <h1>Discover Book By Topic:</h1>
-        <div class="topics">
-            <button class="topic">History</button>
-            <button class="topic">Psyhology</button>
-            <button class="topic">Science</button>
-            <button class="topic random">Surprise Me!</button>
+        <div id="categories" class="topics">
+            <button class="category-btn topic" data-category="History">History</button>
+            <button class="category-btn topic" data-category="Psychology">Psychology</button>
+            <button class="category-btn topic" data-category="Science">Science</button>
+            <button class="category-btn topic" data-category="random">Surprise Me</button>
         </div>
-        <h2>Search Results:</h2>
-        <div class="results"></div>   
+        <h2 id="heading"></h2>
+        <div class="results"></div>
+        <button class="btn" id="view-my-list-btn">My List</button>
+        <button class="btn" id="clear-list-btn">Clear My List</button>   
         <div id="modal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
             <div class="modal-content">
                 <button class="modal-close" aria-label="close">&times;</button>

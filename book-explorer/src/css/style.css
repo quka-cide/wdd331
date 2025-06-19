@@ -120,18 +120,29 @@ header button:hover {
   font-size: 0.9rem;
 }
 
-.card button {
+.card button, .category-btn, .btn {
   background-color: #0077cc;
   color: white;
   border: none;
   margin: 0.5rem;
   padding: 0.4rem 1rem;
   border-radius: 5px;
+  font-size: 18px;
   cursor: pointer;
 }
 
-.card button:hover {
+.btn {
+  background-color: blueviolet;
+}
+
+.card button:hover, .category-btn:hover {
   background-color: #005fa3;
+}
+
+.card button,
+.category-btn,
+.btn {
+  transition: background-color 0.3s ease;
 }
 
 .modal {
@@ -176,5 +187,74 @@ header button:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  header input[type="search"] {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  header button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .topics {
+    justify-content: center;
+  }
+
+  .topic {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .results {
+    grid-template-columns: 1fr;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .modal-close {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .card button,
+  .category-btn,
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 0.5rem;
   }
 }

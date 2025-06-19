@@ -1,6 +1,6 @@
 import BookCard from "./BookCard.mjs";
 
-export default function DisplayCards(results) {
+export default function DisplayCards(results, inMyList = false) {
   const resultsEl = document.querySelector(".results");
   resultsEl.innerHTML = "";
 
@@ -9,7 +9,5 @@ export default function DisplayCards(results) {
     return;
   }
 
-  results.forEach((book) => {
-    resultsEl.innerHTML += BookCard(book);
-  });
+  resultsEl.innerHTML = results.map(book => BookCard(book, inMyList)).join('');
 }
